@@ -1,0 +1,58 @@
+.about {
+    padding-top: 120px;
+    display: grid;
+    grid-template-columns: minmax(min-content, 400px) minmax(auto, 570px);
+    grid-template-rows: repeat(2, minmax(200px, 240px));
+    gap: 40px 70px;
+    grid-template-areas: 
+            "photo bio"
+            "photo content";
+    &__photo {
+        grid-area: photo;
+        height: 600px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__bio {
+        grid-area: bio;
+        padding-top: 10px;
+    }
+    &__block {
+        grid-area: content;
+        display: grid;
+        grid-template: repeat(2, 120px) / repeat(2, 260px);
+        gap: 20px 50px;
+
+    }
+    &__subheader {
+        margin-bottom: 5px;
+        position: relative;
+        @include before_circle;
+    }
+    &__header {
+        margin-bottom: 25px;
+        position: relative;
+        @include horizontal_line;
+    }
+
+    .spec {
+        display: grid;
+        grid-template: 1fr 1fr / 40px 1fr;
+        column-gap: 20px;
+        &__header {
+            padding-bottom: 5px;
+        }
+        &__img {
+            position: relative;
+            @include before_circle_ForSVG;
+            svg {
+                position: absolute;
+                left: 30%;
+                top: 15%;
+            }
+        }
+    }
+}

@@ -1,0 +1,95 @@
+.experience {
+    padding-top: 125px;
+
+    &__subheader {
+        position: relative;
+        text-align: center;
+        @include before_circle;
+        &::before {
+            transform: translate(12%,-18%);
+        }
+    }
+    &__header {
+        position: relative;
+        text-align: center;
+        @include horizontal_line;
+        &::before {
+            transform: translate(145px,75px);
+        }
+        margin-bottom: 80px;
+    }
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(auto, 425px));
+        column-gap: 135px;
+        justify-content: center;
+    }
+    &__item {
+        padding-left: 50px;
+        &-header {
+            position: relative;
+            margin-bottom: 45px;
+            @include small_circle;
+            &::before {
+                left: -50px;
+                top: 25%;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                left: -43px;
+                top: 22px;
+                width: 2px;
+                height: 73px;
+                background: #000;
+            }
+        }
+    }
+    .LI:not(:last-child) {
+        padding-bottom: 48px;
+    }
+    .LI {
+        display: grid;
+        position: relative;
+        grid-template-rows: 40px minmax(75px, auto);
+        row-gap: 12px;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 45px;
+            height: 2px;
+            background: #000;
+            left: -43px;
+            top: 19px;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 126%;
+            background: #000;
+            left: -43px;
+            top: -40px;
+        }
+        .exp-header {
+            display: grid;
+            grid-template-columns: 40px auto;
+            grid-template-rows: repeat(2, auto);
+            column-gap: 17px;
+            &__img {
+                grid-row-start: 1;
+                grid-row-end: 3;
+                display: grid;
+                position: relative;
+                @include before_circle;
+                &::before {
+                    left: 2px;
+                    top: 1px;
+                }
+                img {
+                    place-self: end end;
+                }
+            }
+        }
+    }
+}

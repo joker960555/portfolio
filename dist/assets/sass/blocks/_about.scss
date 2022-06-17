@@ -1,3 +1,74 @@
 .about {
     padding-top: 120px;
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 400px 570px;
+        grid-template-rows: 240px 320px;
+        gap: 40px 70px;
+        grid-template-areas: 
+                "photo bio"
+                "photo info";
+    }
+    &__photo {
+        grid-area: photo;
+        height: 600px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__bio {
+        grid-area: bio;
+        padding-top: 10px;
+    }
+    &__block {
+        grid-area: info;
+        display: grid;
+        grid-template: repeat(2, 120px) / repeat(2, 260px);
+        gap: 20px 50px;
+        grid-auto-rows: auto;
+
+    }
+    &__subheader {
+        margin-bottom: 5px;
+        padding-left: 12px;
+        position: relative;
+        @include before_circle;
+        &::before {
+            transform: translate(-30%, -20%);
+        }
+    }
+    &__header {
+        margin-bottom: 25px;
+        position: relative;
+        @include horizontal_line;
+        &::before {
+            left: 0;
+            bottom: -5px;
+        }
+    }
+
+    .spec {
+        display: grid;
+        grid-template: 1fr 1fr / 40px 1fr;
+        column-gap: 20px;
+        &__header {
+            padding-bottom: 5px;
+        }
+        &__img {
+            position: relative;
+            justify-self: end;
+            margin-right: 20px;
+            @include before_circle;
+            &::before {
+                transform: translate(-45%, -1%);
+            }
+            svg {
+                position: absolute;
+                left: 30%;
+                top: 15%;
+            }
+        }
+    }
 }

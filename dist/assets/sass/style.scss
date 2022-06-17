@@ -9,10 +9,13 @@
     padding: 0;
 }
 
-
 .container {
     width: 1140px;
     margin: 0 auto;
+}
+
+ul, p, label, h2, h3, h4 {
+    margin-bottom: 0;
 }
 
 @import './blocks/promo';
@@ -21,3 +24,9 @@
 @import './blocks/aside';
 @import './blocks/menu';
 @import './blocks/about';
+@import './blocks/experience';
+@import './blocks/skills';
+@import './blocks/works';
+@import './blocks/price-list';
+@import './blocks/contacts';
+@import './blocks/media';

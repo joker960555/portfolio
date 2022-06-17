@@ -1,6 +1,6 @@
 .aside {
     display: grid;
-    position: absolute;
+    position: fixed;
     transform: translateX(-40%) translateY(700%) rotate(-90deg);
     grid-template-columns:repeat(3, 20px) 70px auto;
     column-gap: 15px;

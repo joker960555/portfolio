@@ -1,12 +1,14 @@
 .about {
     padding-top: 120px;
-    display: grid;
-    grid-template-columns: minmax(min-content, 400px) minmax(auto, 570px);
-    grid-template-rows: repeat(2, minmax(200px, 240px));
-    gap: 40px 70px;
-    grid-template-areas: 
-            "photo bio"
-            "photo content";
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 400px 570px;
+        grid-template-rows: 240px 320px;
+        gap: 40px 70px;
+        grid-template-areas: 
+                "photo bio"
+                "photo info";
+    }
     &__photo {
         grid-area: photo;
         height: 600px;
@@ -21,21 +23,30 @@
         padding-top: 10px;
     }
     &__block {
-        grid-area: content;
+        grid-area: info;
         display: grid;
         grid-template: repeat(2, 120px) / repeat(2, 260px);
         gap: 20px 50px;
+        grid-auto-rows: auto;
 
     }
     &__subheader {
         margin-bottom: 5px;
+        padding-left: 12px;
         position: relative;
         @include before_circle;
+        &::before {
+            transform: translate(-30%, -20%);
+        }
     }
     &__header {
         margin-bottom: 25px;
         position: relative;
         @include horizontal_line;
+        &::before {
+            left: 0;
+            bottom: -5px;
+        }
     }
 
     .spec {
@@ -47,7 +58,12 @@
         }
         &__img {
             position: relative;
-            @include before_circle_ForSVG;
+            justify-self: end;
+            margin-right: 20px;
+            @include before_circle;
+            &::before {
+                transform: translate(-45%, -1%);
+            }
             svg {
                 position: absolute;
                 left: 30%;

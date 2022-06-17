@@ -1,0 +1,92 @@
+.skills {
+    .container {
+        padding-left: 4vh;
+    }
+    padding-top: 120px;
+    &__subheader {
+        position: relative;
+        text-align: center;
+        margin-bottom: 5px;
+        @include before_circle;
+        &::before {
+            left: 50%;
+            top: 0;
+            transform: translate(-50%, -15%);
+        }
+    }
+    &__header {
+        text-align: center;
+        position: relative;
+        margin-bottom: 85px;
+        @include horizontal_line;
+        &::before {
+            left: 50%;
+            bottom: 0;
+            transform: translate(-50%, 25px);
+        }
+    }
+    &__wrapper {
+        display: grid;
+        justify-content: center;
+        grid-template: repeat(2, 270px) / repeat(4, 270px);
+        grid-auto-rows: 270px;
+        gap: 13px;
+        &_item {
+            border: 1px solid #000;
+            padding: 30px 30px 25px 30px;
+            display: grid;
+            grid-template-rows: 65px 21px 1fr;
+            row-gap: 15px;
+        }
+        .skill__block {
+            &_img {
+                align-self: center;
+            }
+        }
+    }
+    .skillbar {
+        padding-top: 120px;
+        display: grid;
+        grid-template: repeat(2, 70px) / repeat(3, 350px);
+        grid-auto-rows: 70px;
+        gap: 30px 45px;
+        &__item {
+            display: grid;
+            grid-template: 21px 14px / 3fr 1fr;
+            row-gap: 27px;
+            &_header {
+                place-self: start start;
+                padding-left: 13px;
+                position: relative;
+                @include before_circle;
+                &::before {
+                    left: 0%;
+                    top: -40%;
+                }
+            }
+            &_percent {
+                place-self: start end;
+                position: relative;
+                &-input {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    width: 33px;
+                    height: 100%;
+                }
+            }
+            &_progress-bar {
+                grid-column-start: 1;
+                grid-column-end: 3;
+                width: 350px;
+                height: 14px;
+                background: #E8E4DE;
+                border-radius: 4px;
+            }
+            .complete {
+                background: $main-color;
+                width: 0%;
+            }
+        }
+    }
+}

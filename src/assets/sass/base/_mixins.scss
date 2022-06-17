@@ -5,20 +5,6 @@
         width: 36px;
         height: 36px;
         border-radius: 100%;
-        transform: translate(-30%, -20%);
-        z-index: -1;
-        background: $main-color;
-    }
-}
-
-@mixin before_circle_ForSVG {
-    &::before {
-        content: '';
-        position: absolute;
-        width: 36px;
-        height: 36px;
-        border-radius: 100%;
-        transform: translate(-10%, -1%);
         z-index: -1;
         background: $main-color;
     }
@@ -31,6 +17,26 @@
         width: 60px;
         height: 3px;
         background: $main-color;
-        transform: translate(3%, 60px);
+    }
+}
+
+@mixin horizontal_line-after {
+    &::after {
+        content: '';
+        position: absolute;
+        width: 60px;
+        height: 3px;
+        background: $main-color;
+    }
+}
+
+@mixin small_circle {
+    &::before {
+        content: '';
+        position: absolute;
+        border-radius: 100%;
+        width: 15px;
+        height: 15px;
+        background: $main-color;
     }
 }

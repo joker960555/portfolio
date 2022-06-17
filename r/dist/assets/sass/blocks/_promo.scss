@@ -1,10 +1,10 @@
-.container {
+.promo .container {
     padding-left: 15vh;
 }
 
 .promo {
     height: 100vh;
-    background: url("../assets/img/background2x.jpg") no-repeat 50%/cover;
+    background: url("../img/background2x.jpg") no-repeat 50%/cover;
     padding-top: 205px;
     position: relative;
     .hamburger {
@@ -36,9 +36,6 @@
         z-index: 2;
         padding-left: 10px;
         @include before_circle;
-        &::before {
-            transform: translate(-30%, -20%);
-        }
     }
     &__button {
         padding-top: 25px;
